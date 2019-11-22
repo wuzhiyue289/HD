@@ -44,13 +44,13 @@ public class demo {
     	System.out.println("时间:"+nowtime);
     	System.out.println("参数"+request.getQueryString());
        
-        String serialNumber = request.getParameter("serial");//���ú�
-        String useridNumber = request.getParameter("userid");//�û�id
-        String recordidNumber = request.getParameter("recordid");//¼�Ƽ�
-        String fileidNumber = request.getParameter("fileid");//�ĵ�
-        String roleNumber = request.getParameter("role");//�û�����
-        String statusNumber = request.getParameter("status");// ״̬��0 Ϊ�ǳ� 1 Ϊ���룩 
-        String usernameNumber = request.getParameter("username");//�û���
+        String serialNumber = request.getParameter("serial");//
+        String useridNumber = request.getParameter("userid");//
+        String recordidNumber = request.getParameter("recordid");//
+        String fileidNumber = request.getParameter("fileid");//
+        String roleNumber = request.getParameter("role");//
+        String statusNumber = request.getParameter("status");//  
+        String usernameNumber = request.getParameter("username");//
         
        //登入登出
     if(statusNumber!=null) {
@@ -64,7 +64,7 @@ public class demo {
     }
     //录制件
     if(recordidNumber !=null) {
-    	System.out.println("号码:"+serialNumber+"id:"+recordidNumber);
+    	System.out.println("视屏号码:"+serialNumber+"及唯一id:"+recordidNumber);
        
     }else{
     	
