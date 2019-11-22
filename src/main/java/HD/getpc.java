@@ -52,7 +52,7 @@ public class getpc {
 		userInfo.append("操作系统：" + os1.toString() + " 浏览器：" + browser1.toString());
 		System.out.println("操作系统：" + os1.toString() + " 浏览器：" + browser1.toString() + "user" + userip);
 		map.put("浏览器", browser1.toString());
-		map.put("操作系统", os1.toString());
+		map.put("操作系统",os1.toString());
 		map.put("ip", userip);
 		JSONArray Js = JSONArray.fromObject(map);
 		return Js.toString();
