@@ -1,6 +1,6 @@
 package HD;
 /**
- * ²âÊÔ»Øµ÷
+ * ï¿½ï¿½ï¿½Ô»Øµï¿½
  */
 
 import java.io.BufferedReader;
@@ -39,75 +39,75 @@ public class demo {
     public String tsa(HttpServletRequest request,@Param("username") String username) throws IOException {
     	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     	String nowtime = sdf.format(new Date());
-    	System.out.println("Ãû×Ö"+username);
+    	System.out.println("åå­—"+username);
     	System.out.println();
-    	System.out.println("Ê±¼äÊÇ:"+nowtime);
-    	System.out.println("²ÎÊı"+request.getQueryString());
+    	System.out.println("æ—¶é—´:"+nowtime);
+    	System.out.println("å‚æ•°"+request.getQueryString());
        
-        String serialNumber = request.getParameter("serial");//¿ÎÌÃºÅ
-        String useridNumber = request.getParameter("userid");//ÓÃ»§id
-        String recordidNumber = request.getParameter("recordid");//Â¼ÖÆ¼ş
-        String fileidNumber = request.getParameter("fileid");//ÎÄµµ
-        String roleNumber = request.getParameter("role");//ÓÃ»§ÀàĞÍ
-        String statusNumber = request.getParameter("status");// ×´Ì¬£¨0 ÎªµÇ³ö 1 ÎªµÇÈë£© 
-        String usernameNumber = request.getParameter("username");//ÓÃ»§Ãû
+        String serialNumber = request.getParameter("serial");//ï¿½ï¿½ï¿½Ãºï¿½
+        String useridNumber = request.getParameter("userid");//ï¿½Ã»ï¿½id
+        String recordidNumber = request.getParameter("recordid");//Â¼ï¿½Æ¼ï¿½
+        String fileidNumber = request.getParameter("fileid");//ï¿½Äµï¿½
+        String roleNumber = request.getParameter("role");//ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
+        String statusNumber = request.getParameter("status");// ×´Ì¬ï¿½ï¿½0 Îªï¿½Ç³ï¿½ 1 Îªï¿½ï¿½ï¿½ë£© 
+        String usernameNumber = request.getParameter("username");//ï¿½Ã»ï¿½ï¿½ï¿½
         
-       //µÇÈëµÇ³ö
+       //ç™»å…¥ç™»å‡º
     if(statusNumber!=null) {
         if(Integer.parseInt(statusNumber)==0) {
-        	System.out.println("µÇ³ö(ÍË³ö)×´Ì¬,ÓÃ»§idÎª"+useridNumber+"¼°ÓÃ»§ÃûÎª"+usernameNumber);
+        	System.out.println("è¿›å‡º"+useridNumber+"åå­—:"+usernameNumber);
         }else if(1==Integer.parseInt(statusNumber)) {
-        	System.out.println("µÇÈë(½øÈë)×´Ì¬,ÓÃ»§idÎª"+useridNumber+"¼°ÓÃ»§ÃûÎª"+usernameNumber);
+        	System.out.println("è¿›å…¥"+useridNumber+"åå­—:"+usernameNumber);
         }else {
-        	System.out.println("²»ÖªµÀÊÇ½ø»¹ÊÇ³ö");
+        	System.out.println("å‡ºé”™");
         };
     }
-    //Â¼ÖÆ¼ş
+    //å½•åˆ¶ä»¶
     if(recordidNumber !=null) {
-    	System.out.println("Â¼ÖÆ¼şÍê³ÉÁË,¿ÎÌÃºÅÊÇ:"+serialNumber+"±àºÅÎª:"+recordidNumber);
+    	System.out.println("å·ç :"+serialNumber+"id:"+recordidNumber);
        
     }else{
     	
     }
-    //¿Î¼ş×ª»»
+    //æ–‡ä»¶
     if(fileidNumber !=null) {
-    	System.out.println("¿Î¼ş×ª»»Íê³É:idÎª"+fileidNumber);
+    	System.out.println("æ–‡ä»¶id"+fileidNumber);
     }
-        //½øÈëÉí·İ
+        //èº«ä»½
         try {
         	if(0==Integer.parseInt(roleNumber)) {
-            	System.out.println("ÀÏÊ¦½øÀ´ÁË:");//+"¿ÎÌÃºÅÊÇ"+serialNumber
+            	System.out.println("0:");
             }else if(1==Integer.parseInt(roleNumber)){
-            	System.out.println("Öú½Ì½øÀ´ÁË:");
+            	System.out.println("1:");
             }else if(2==Integer.parseInt(roleNumber)){
-            	System.out.println("Ñ§Ô±½øÀ´ÁË:");
+            	System.out.println("2å¬è¯¾:");
             }else if(3==Integer.parseInt(roleNumber)){
-            	System.out.println("Ö±²¥ÓÃ»§½øÀ´ÁË:");
+            	System.out.println("Ö±3ç›´æ’­ç”¨æˆ·:");
             }else if(4==Integer.parseInt(roleNumber)){
-            	System.out.println("Ñ²¿Î½øÀ´ÁË:");
+            	System.out.println("å·¡æ£€:");
             }else {
-            	System.out.println("²»ÖªµÀË­½øÀ´ÁË:");
+            	System.out.println("æœªçŸ¥äººç‰©:");
             }
         	
             
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-        System.out.println("¿ÎÌÃºÅÊÇ"+serialNumber);
-        //»Øµ÷½áÊø
+        System.out.println("å·ç "+serialNumber);
+        //ç»“æŸ
         return username;
     }
-    //ÉÏ¿Î»Øµ÷
-    @PostMapping(value="startclass.do")
+    //
+    @PostMapping(value="start.do")
     
      public void starClass(@RequestBody String requestBody, HttpServletRequest request) {
-    	System.out.println("requestBodyÊÇ"+requestBody);
+    	System.out.println("requestBody"+requestBody);
     	String req=request.getParameter(requestBody);
-    	System.out.println("reqÊÇ"+req);
+    	System.out.println("req"+req);
     
 
      }
-    //Â¼ÖÆ¼ş×ª»»
+    //Â¼ï¿½Æ¼ï¿½×ªï¿½ï¿½
    @RequestMapping(value="recordlist.do",method=RequestMethod.GET)
     public void dolist(HttpServletRequest req) {
     //	String s =requestBody;
@@ -116,7 +116,7 @@ public class demo {
 	   String c=req.getParameter("recordtype");
 	   String d=req.getParameter("starttime");
 	   String e=req.getParameter("endtime");
-    	System.out.println("»Ø·Å"+a+"¡ú"+b+"¡ú"+c+"¡ú"+d+"¡ú"+e);
+    	System.out.println("ï¿½Ø·ï¿½"+a+"ï¿½ï¿½"+b+"ï¿½ï¿½"+c+"ï¿½ï¿½"+d+"ï¿½ï¿½"+e);
     	
     	
     }
@@ -125,7 +125,7 @@ public class demo {
             HttpServletResponse response) throws ServletException, IOException {
         PrintWriter writer = response.getWriter();
         Map<String, String[]> params = request.getParameterMap();
-        System.out.println("paramsÊÇ"+params);
+        System.out.println("paramsï¿½ï¿½"+params);
         String queryString = "";
         for (String key : params.keySet()) {
             String[] values = params.get(key);
@@ -136,15 +136,15 @@ public class demo {
         }
         
         
-        // È¥µô×îºóÒ»¸ö¿Õ¸ñ
-        System.out.println("queryStringÈ¥µôÇ°"+queryString);
+        // È¥ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Õ¸ï¿½
+        System.out.println("queryStringÈ¥ï¿½ï¿½Ç°"+queryString);
         queryString = queryString.substring(0, queryString.length() - 1);
         writer.println("POST " + request.getRequestURL() + " " + queryString);
         System.out.println("POST " + request.getRequestURL() + " " + queryString);
         
          
     }
-    //Ö»ÄÃÊı¾İÌå²»ÄÃµØÖ·À¸µÄÊı¾İ
+    //Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å²»ï¿½Ãµï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     @RequestMapping("getpost.do")  
     public String doPost1(HttpServletRequest request,
             HttpServletResponse response) throws UnsupportedEncodingException, IOException {

@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 
- * @author 作者 :
+ * @author 
  * 
- * @version 创建时间：
+ * @version 
  * 
- *          类说明 :
+ *         
  * 
  */
 public class Hddemo {
