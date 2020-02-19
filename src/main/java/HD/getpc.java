@@ -1,17 +1,10 @@
 package HD;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+
 import java.util.HashMap;
-import java.util.StringTokenizer;
-
-import javax.naming.directory.SearchResult;
 import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import eu.bitwalker.useragentutils.Browser;
 import eu.bitwalker.useragentutils.OperatingSystem;
 import eu.bitwalker.useragentutils.UserAgent;

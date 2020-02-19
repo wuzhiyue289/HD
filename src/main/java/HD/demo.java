@@ -98,14 +98,14 @@ public class demo {
         return username;
     }
     //
-    @PostMapping(value="start.do")
+    @RequestMapping(value="start.do")
     
-     public void starClass(@RequestBody String requestBody, HttpServletRequest request) {
+     public String starClass(@RequestBody String requestBody, HttpServletRequest request) {
     	System.out.println("requestBody"+requestBody);
     	String req=request.getParameter(requestBody);
-    	System.out.println("req"+req);
+    	System.out.println("开始上课"+req);
     
-
+return "success";
      }
     //¼�Ƽ�ת��
    @RequestMapping(value="recordlist.do",method=RequestMethod.GET)
@@ -144,7 +144,7 @@ public class demo {
         
          
     }
-    //ֻ�������岻�õ�ַ��������
+    //ֻ下课回调
     @RequestMapping("getpost.do")  
     public String doPost1(HttpServletRequest request,
             HttpServletResponse response) throws UnsupportedEncodingException, IOException {
@@ -157,7 +157,7 @@ public class demo {
 		while ((inputStr = streamReader.readLine()) != null)
 
      Str =  responseStrBuilder.append(inputStr); 
-		System.out.println(Str);
+		System.out.println("下课"+Str);
 	
 		return "success";
     }

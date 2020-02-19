@@ -31,7 +31,7 @@ public class Hddemo {
 		while ((inputStr = streamReader.readLine()) != null)
 
 			Str = responseStrBuilder.append(inputStr);
-		System.out.println(Str);
+		System.out.println("下课"+Str);
 
 		return "success";
 	}
