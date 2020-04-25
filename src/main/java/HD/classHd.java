@@ -58,23 +58,19 @@ public class classHd {
 	@RequestMapping("startOrEndClass.do")
 	@ResponseBody
 	/**
-	 * 上下课回调
-	 * 
-	 * @param request
-	 * @param response
-	 * @return
-	 * @throws UnsupportedEncodingException
-	 * @throws IOException
+	 * 拓课云上下课回调
 	 */
-	public String startClass(HttpServletRequest request, HttpServletResponse response)
+	public String TKstartClass(HttpServletRequest request, HttpServletResponse response)
 			throws UnsupportedEncodingException, IOException {
-		BufferedReader streamReader = new BufferedReader(new InputStreamReader(request.getInputStream(), "UTF-8"));
-		StringBuilder responseStrBuilder = new StringBuilder();
-		String inputStr;
+		BufferedReader TKstreamReader = new BufferedReader(new InputStreamReader(
+				request.getInputStream(), "UTF-8"));
+		StringBuilder TKresponseStrBuilder = new StringBuilder();
+		String TKinputStr; //拓课云上下课post回调示例
 		StringBuilder Str = null;
-		while ((inputStr = streamReader.readLine()) != null) {
-			Str = responseStrBuilder.append(inputStr);
+		while ((TKinputStr = TKstreamReader.readLine()) != null) {
+			Str = TKresponseStrBuilder.append(TKinputStr);
 		}
+		System.out.println("上下课"+Str);
 	// str是data的数据
 		logger.info(Str);
 		return "success";
@@ -88,6 +84,7 @@ public class classHd {
 	 *            starttime 开始录制件事时间 endtime 结束录制时
 	 */
 	@RequestMapping("record.do")
+	@ResponseBody
 	public void recordListGenerate(HttpServletRequest req) {
 
 		recordid = req.getParameter("recordid");
@@ -100,7 +97,7 @@ public class classHd {
 		} else {
 			recordtype = "MP4录制件";
 		}
-		
+		System.out.println("房间号"+serial+"开始时间"+starttime+"结束时间"+endtime+"录制件类型"+recordtype);
 	}
 
 	@RequestMapping("fileHd.do")
@@ -108,6 +105,8 @@ public class classHd {
 		String fileid = req.getParameter("fileid");
 		// 后续会加失败也回调
 		logger.info(fileid + "课件转换成功");
+		System.out.println("课件转换回调"+fileid);
+		System.out.println("参数"+req.getQueryString());
 		
 	}
 
