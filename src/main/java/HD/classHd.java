@@ -103,8 +103,9 @@ public class classHd {
 	@RequestMapping("fileHd.do")
 	public void fileHd(HttpServletRequest req) {
 		String fileid = req.getParameter("fileid");
-		// 后续会加失败也回调
-		logger.info(fileid + "课件转换成功");
+		String converStatus = req.getParameter("converStatus");
+		//converStatus  0代表转换完成    -1代表转换失败
+		logger.info(fileid + "课件转换"+converStatus);
 		System.out.println("课件转换回调"+fileid);
 		System.out.println("参数"+req.getQueryString());
 		
